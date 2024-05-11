@@ -37,7 +37,7 @@ class NN:
         return(x / (1 + np.exp(x)))
 
     def phi(self,x, c, w):
-        p = w * (self.silu(x) + self.spline(x, c))
+        p = w * self.silu(x) + self.spline(x, c)
         return(p)
 
     def run(self, c, w, train_inputs):
